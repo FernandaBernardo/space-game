@@ -1,0 +1,188 @@
+.game {
+    width: 700px;
+    height: 700px;
+    background: url('fundo.jpg');
+    margin: 0 auto;
+    position: relative; 
+    cursor: url('boneco.png'), auto;
+    counter-reset: pontos;
+}
+
+.game:after {
+    content: counter(pontos) '/5';
+    font-size: 2em;
+    text-align: center;
+    float: right;
+    padding: 0.3em;
+    z-index: 5;
+    color: white;
+    vertical-align: middle;
+}
+
+.game:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 4px darkgoldenrod;
+    float: right;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 1em;
+    margin-right: 0.5em;
+}
+
+.pause-button ~ .inimigo,
+.pause-button ~ .coin {
+    animation-play-state: running;
+}
+
+.pause-button:checked ~ .inimigo,
+.pause-button:checked ~ .coin {
+    animation-play-state: paused;
+}
+
+.pause-button:checked ~ .pause-container {
+    display: block;
+}
+
+.inimigo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    animation-name: moving;
+    animation-fill-mode: forwards;
+}
+
+#i1, #i6 {
+    left: 14%;
+    animation-duration: 2s;
+    animation-iteration-count: 4;
+}
+
+#i2, #c3 {
+    left: 28%;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+}
+
+#i3, #i7 {
+    left: 42%;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+}
+
+#c1, #i8 {
+    left: 56%;
+    animation-duration: 2s;
+    animation-iteration-count: 4;
+}
+
+#i4, #i9 {
+    left: 70%;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+}
+
+#c2, #c4 {
+    left: 84%;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+}
+
+#i5, #i10 {
+    left: 98%;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+}
+
+#i6, #c3, #i7, #i8, #i9, #c4, #i10, #c5 {
+    animation-delay: 8s;
+    visibility: hidden;
+    background-color: red;
+}
+
+#c5 {
+    left: 36%;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+}
+
+.inimigo:hover ~ .oops {
+    display: block;
+}
+
+.coin {
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 4px darkgoldenrod;
+    left: 70%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    animation-name: moving;
+    -webkit-appearance: none;
+    animation-fill-mode: forwards;
+}
+
+.coin:checked {
+    counter-increment: pontos;
+    visibility: hidden;
+    /* NAO FUNCIONA display: none; */
+}
+
+@keyframes moving {
+    from {
+        top: 0;
+        visibility: visible;
+    }
+    to {
+        top: 100%;
+        visibility: hidden;
+    }
+}
+
+.pause-container {
+    display: none;
+    width: 100%;
+    height: calc(100% - 15px);
+    position: absolute;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 10;
+    top: 15px; 
+}
+.pause-container:before {
+    content: '';
+    left: 15px;
+    top: -15px;
+    width: calc(100% - 15px);
+    height: 15px;
+    position: absolute;
+    background-color: black;
+}
+
+.oops {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: 10;
+    font-size: 3em;
+    color: white;
+    text-align: center;
+}
+
+.oops:hover {
+    display: block;
+}
