@@ -53,63 +53,61 @@
     border-radius: 50%;
     background-color: white;
     position: absolute;
-    z-index: 2;
-    top: 0;
     animation-name: moving;
-    animation-fill-mode: forwards;
+    animation-fill-mode: backwards;
+    z-index: -1;
 }
 
 #i1, #i6 {
     left: 14%;
-    animation-duration: 2s;
-    animation-iteration-count: 4;
+    animation-duration: 6s;
+    animation-iteration-count: 2;
 }
 
 #i2, #c3 {
     left: 28%;
-    animation-duration: 4s;
+    animation-duration: 5s;
     animation-iteration-count: 2;
 }
 
 #i3, #i7 {
     left: 42%;
-    animation-duration: 3s;
+    animation-duration: 7s;
     animation-iteration-count: 2;
 }
 
 #c1, #i8 {
     left: 56%;
-    animation-duration: 2s;
-    animation-iteration-count: 4;
+    animation-duration: 6s;
+    animation-iteration-count: 2;
 }
 
 #i4, #i9 {
     left: 70%;
-    animation-duration: 8s;
+    animation-duration: 12s;
     animation-iteration-count: 1;
 }
 
 #c2, #c4 {
     left: 84%;
-    animation-duration: 3s;
+    animation-duration: 7s;
     animation-iteration-count: 2;
 }
 
 #i5, #i10 {
-    left: 98%;
-    animation-duration: 6s;
+    left: 95%;
+    animation-duration: 10s;
     animation-iteration-count: 1;
 }
 
 #i6, #c3, #i7, #i8, #i9, #c4, #i10, #c5 {
-    animation-delay: 8s;
-    visibility: hidden;
+    animation-delay: 10s;
     background-color: red;
 }
 
 #c5 {
     left: 36%;
-    animation-duration: 6s;
+    animation-duration: 10s;
     animation-iteration-count: 1;
 }
 
@@ -125,28 +123,30 @@
     box-shadow: 0px 0px 10px 4px darkgoldenrod;
     left: 70%;
     position: absolute;
-    top: 0;
-    z-index: 2;
     animation-name: moving;
     -webkit-appearance: none;
-    animation-fill-mode: forwards;
+    animation-fill-mode: backwards;
+    z-index: -1;
+}
+
+@keyframes moving {
+    0% {
+        top: 0;
+        z-index: -1;
+    }
+    1% {
+        z-index: 2;
+    }
+    100% {
+        top: calc(100% - 20px);
+        z-index: 2;
+    }
 }
 
 .coin:checked {
     counter-increment: pontos;
     visibility: hidden;
     /* NAO FUNCIONA display: none; */
-}
-
-@keyframes moving {
-    from {
-        top: 0;
-        visibility: visible;
-    }
-    to {
-        top: 100%;
-        visibility: hidden;
-    }
 }
 
 .pause-container {
