@@ -137,34 +137,51 @@
 .pause-container {
     display: none;
     width: 100%;
-    height: calc(100% - 15px);
+    height: calc(100% - 32px - 0.3em);
     position: absolute;
     background-color: black;
     opacity: 0.7;
     z-index: 10;
-    top: 15px; 
+    top: calc(32px + 0.3em); 
 }
+
 .pause-container:before {
     content: '';
-    left: 15px;
-    top: -15px;
-    width: calc(100% - 15px);
-    height: 15px;
+    left: calc(32px + 0.3em);
+    top: calc(-32px - 0.3em);
+    width: calc(100% - 32px - 0.3em);
+    height: calc(32px + 0.3em);
     position: absolute;
     background-color: black;
 }
 
-.pause-button ~ .inimigo,
-.pause-button ~ .coin {
+#pause-button + label {
+    background-image: url('pause.png');
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    margin: 0.3em;
+}
+
+#pause-button:checked + label {
+    background-image: url('play.png');
+}
+
+#pause-button {
+    display: none;
+}
+
+#pause-button ~ .inimigo,
+#pause-button ~ .coin {
     animation-play-state: running;
 }
 
-.pause-button:checked ~ .inimigo,
-.pause-button:checked ~ .coin {
+#pause-button:checked ~ .inimigo,
+#pause-button:checked ~ .coin {
     animation-play-state: paused;
 }
 
-.pause-button:checked ~ .pause-container {
+#pause-button:checked ~ .pause-container {
     display: block;
 }
 
