@@ -1,6 +1,6 @@
 .game {
-    width: 700px;
-    height: 700px;
+    width: 90vw;
+    height: 95vh;
     background: url('fundo.jpg');
     margin: 0 auto;
     position: relative; 
@@ -49,7 +49,6 @@
     background-color: yellow;
     border-radius: 50%;
     box-shadow: 0px 0px 10px 4px darkgoldenrod;
-    left: 70%;
     position: absolute;
     -webkit-appearance: none;
     z-index: -1;
@@ -68,43 +67,49 @@
 }
 
 #i1, #i6 {
-    left: 14%;
+    left: 9%;
     animation-duration: 6s;
     animation-iteration-count: 2;
 }
 
 #i2, #c3 {
-    left: 28%;
+    left: 23%;
     animation-duration: 5s;
     animation-iteration-count: 2;
 }
 
 #i3, #i7 {
-    left: 42%;
+    left: 37%;
     animation-duration: 7s;
     animation-iteration-count: 2;
 }
 
 #c1, #i8 {
-    left: 56%;
+    left: 51%;
     animation-duration: 6s;
     animation-iteration-count: 2;
 }
 
 #i4, #i9 {
-    left: 70%;
+    left: 65%;
     animation-duration: 12s;
     animation-iteration-count: 1;
 }
 
 #c2, #c4 {
-    left: 84%;
+    left: 79%;
     animation-duration: 7s;
     animation-iteration-count: 2;
 }
 
 #i5, #i10 {
-    left: 95%;
+    left: 90%;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+}
+
+#c5 {
+    left: 29%;
     animation-duration: 10s;
     animation-iteration-count: 1;
 }
@@ -114,11 +119,6 @@
     background-color: red;
 }
 
-#c5 {
-    left: 36%;
-    animation-duration: 10s;
-    animation-iteration-count: 1;
-}
 
 @keyframes moving {
     0% {
