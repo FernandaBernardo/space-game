@@ -8,33 +8,56 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="game">
-        <input type="checkbox" id="pause-button"></input>
-        <label for="pause-button"></label>
-        <div class="inimigo" id="i1"></div>
-        <div class="inimigo" id="i2"></div>
-        <div class="inimigo" id="i3"></div>
-        <input type="checkbox" id="c1" class="coin"></input>
-        <div class="inimigo" id="i4"></div>
-        <input type="checkbox" id="c2" class="coin"></input>
-        <div class="inimigo" id="i5"></div>
-        <div class="inimigo" id="i6"></div>
-        <input type="checkbox" id="c3" class="coin"></input>
-        <div class="inimigo" id="i7"></div>
-        <div class="inimigo" id="i8"></div>
-        <div class="inimigo" id="i9"></div>
-        <input type="checkbox" id="c4" class="coin"></input>
-        <div class="inimigo" id="i10"></div>
-        <input type="checkbox" id="c5" class="coin"></input>
+    <div class="container">
+        <input id="intro" type="checkbox">
+        <input id="rules" type="checkbox">
 
-        <div class="pause-container"></div>
+        <section class="intro">
+            <h2>Space Game</h2>
+            <p>Jogo só com CSS, sem Javascript ;D</p>
+            <label for="intro">Play!</label>
+        </section>
 
-        <div class="oops">
-            Game over
-        </div>
-        <div class="venceu">
-            Venceu! :)
-        </div>
-    </main>
+        <section class="rules">
+            <div>
+                <h3>Regras</h3>
+                <ul>
+                    <li>Mova seu personagem com o mouse</li>
+                    <li>Clique nas moedas para coletá-las</li>
+                    <li>Fuja dos tiros</li>
+                </ul>
+                <label for="rules">Entendi :)</label>
+            </div>
+        </section>
+
+        <main class="game">
+            <input type="checkbox" id="pause-button"></input>
+            <label for="pause-button"></label>
+            <div class="inimigo" id="i1"></div>
+            <div class="inimigo" id="i2"></div>
+            <div class="inimigo" id="i3"></div>
+            <input type="checkbox" id="c1" class="coin"></input>
+            <div class="inimigo" id="i4"></div>
+            <input type="checkbox" id="c2" class="coin"></input>
+            <div class="inimigo" id="i5"></div>
+            <div class="inimigo" id="i6"></div>
+            <input type="checkbox" id="c3" class="coin"></input>
+            <div class="inimigo" id="i7"></div>
+            <div class="inimigo" id="i8"></div>
+            <div class="inimigo" id="i9"></div>
+            <input type="checkbox" id="c4" class="coin"></input>
+            <div class="inimigo" id="i10"></div>
+            <input type="checkbox" id="c5" class="coin"></input>
+
+            <div class="pause-container"></div>
+
+            <div class="oops">
+                Game over
+            </div>
+            <div class="venceu">
+                Venceu! :)
+            </div>
+        </main>
+    </div>
 </body>
 </html>

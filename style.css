@@ -1,12 +1,20 @@
-.game {
+.container {
     width: 90vw;
     height: 95vh;
-    background: url('fundo.jpg');
     margin: 0 auto;
-    position: relative; 
     cursor: url('boneco.png'), auto;
-    counter-reset: pontos;
+    position: relative;
     border: 4px solid darkblue;
+}
+
+.game {
+    background: url('fundo.jpg');
+    counter-reset: pontos;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .game:after {
@@ -32,6 +40,82 @@
     vertical-align: middle;
     margin-top: 1em;
     margin-right: 0.5em;
+}
+
+.intro {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 15;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#intro, #rules {
+    display: none;
+}
+
+label[for="intro"], label[for="rules"] {
+    padding: 1em;
+    font-size: 1.2em;
+    background-color: purple;
+    border-radius: 5px;
+    margin: 1em 25%;
+    display: inline-block;
+    border: 1px solid purple;
+}
+
+label[for="intro"]:hover, label[for="rules"]:hover {
+    color: purple;
+    background-color: white;
+}
+
+#intro:checked ~ .intro {
+    display: none;
+}
+
+#intro:checked + #rules:checked ~ .rules {
+    display: none;
+}
+
+.rules {
+    display: block;
+    z-index: 14;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.rules div {
+    background-color: white;
+    display: inline-block;
+    margin: 0 auto;
+    z-index: 19;
+    text-align: center;
+    overflow: visible;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+}
+
+.rules ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rules ul > li {
+    margin: 1em auto;
 }
 
 .inimigo {
