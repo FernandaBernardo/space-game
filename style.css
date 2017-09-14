@@ -2,13 +2,13 @@
     width: 90vw;
     height: 95vh;
     margin: 0 auto;
-    cursor: url('bob.png'), auto;
+    cursor: url('images/bob.png'), auto;
     position: relative;
     border: 4px solid darkblue;
 }
 
 .game {
-    background: url('fundo.jpg');
+    background: url('images/fundo.jpg');
     counter-reset: pontos;
     position: absolute;
     width: 100%;
@@ -240,7 +240,7 @@ label[for="intro"]:hover, label[for="rules"]:hover {
 }
 
 #pause-button + label {
-    background-image: url('pause.png');
+    background-image: url('images/pause.png');
     width: 32px;
     height: 32px;
     display: inline-block;
@@ -248,7 +248,7 @@ label[for="intro"]:hover, label[for="rules"]:hover {
 }
 
 #pause-button:checked + label {
-    background-image: url('play.png');
+    background-image: url('images/play.png');
 }
 
 #pause-button {
