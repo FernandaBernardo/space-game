@@ -1,10 +1,17 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Audiowide', cursive;
+}
+
 .container {
-    width: 90vw;
-    height: 95vh;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
-    cursor: url('images/bob.png'), auto;
+    cursor: url('images/bob.png'), default;
     position: relative;
     border: 4px solid darkblue;
+    box-sizing: border-box;
 }
 
 .game {
@@ -135,6 +142,7 @@ label[for="intro"]:hover, label[for="rules"]:hover {
     box-shadow: 0px 0px 10px 4px darkgoldenrod;
     position: absolute;
     -webkit-appearance: none;
+    -moz-appearance: none;
     z-index: -1;
 }
 
@@ -200,9 +208,7 @@ label[for="intro"]:hover, label[for="rules"]:hover {
 
 #i6, #c3, #i7, #i8, #i9, #c4, #i10, #c5 {
     animation-delay: 10s;
-    background-color: red;
 }
-
 
 @keyframes moving {
     0% {
@@ -244,6 +250,9 @@ label[for="intro"]:hover, label[for="rules"]:hover {
     width: 32px;
     height: 32px;
     display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
     margin: 0.3em;
 }
 
@@ -305,7 +314,7 @@ label[for="intro"]:hover, label[for="rules"]:hover {
     text-align: center;
 }
 
-#c1:checked ~ #c2:checked ~ #c3:checked ~ #c4:checked ~ #c5:checked 
+#c1:checked ~ #c2:checked ~ #c3:checked ~ #c4:checked ~ #c5:checked
 ~ .venceu {
     display: block;
 }
